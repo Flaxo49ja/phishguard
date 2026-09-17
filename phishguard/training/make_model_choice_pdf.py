@@ -71,10 +71,11 @@ class Guide(FPDF):
         self.ln(3)
 
     def footer(self):
+        # matched-set style: same format as the Field Guide footer
         self.set_y(-14)
-        self.set_font("DejaVu", "", 8)
+        self.set_font("DejaVu", "", 7.5)
         self.set_text_color(*MUTED)
-        self.cell(0, 8, f"Page {self.page_no()} of {{nb}}", new_x=XPos.LMARGIN, new_y=YPos.NEXT, align="C")
+        self.cell(0, 8, f"Why These Models?   .   {self.page_no()}/{{nb}}", align="C")
 
     # ---- building blocks -------------------------------------------------
     def h1(self, text):
