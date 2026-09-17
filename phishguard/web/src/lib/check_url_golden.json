@@ -1,0 +1,1134 @@
+{
+ "model": "LogisticRegression",
+ "threshold": 0.5,
+ "entries": [
+  {
+   "raw_input": "https://www.google.com",
+   "note": "web golden master: LogisticRegression (--fast) \u2014 the exact model the browser runs",
+   "response": {
+    "url": "https://www.google.com",
+    "verdict": "LEGITIMATE",
+    "phishing_probability": 0.4406,
+    "threshold": 0.5,
+    "features": {
+     "url_length": 22,
+     "hostname_length": 14,
+     "path_length": 0,
+     "num_dots": 2,
+     "num_hyphens": 0,
+     "num_underscores": 0,
+     "num_slashes": 2,
+     "num_digits": 0,
+     "num_special_chars": 0,
+     "has_at_symbol": 0,
+     "has_ip_address": 0,
+     "num_subdomains": 1,
+     "uses_https": 1,
+     "has_https_token_in_path": 0,
+     "is_shortened_url": 0,
+     "url_entropy": 3.6635,
+     "tld_in_subdomain": 0,
+     "digit_letter_ratio": 0.0
+    },
+    "feature_contributions": [
+     {
+      "feature": "path_length",
+      "value": 0,
+      "contribution": 0.164,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_entropy",
+      "value": 3.6635,
+      "contribution": 0.0894,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_length",
+      "value": 22,
+      "contribution": -0.0409,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "hostname_length",
+      "value": 14,
+      "contribution": -0.0234,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "digit_letter_ratio",
+      "value": 0.0,
+      "contribution": 0.0033,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_dots",
+      "value": 2,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_hyphens",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_underscores",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_slashes",
+      "value": 2,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_digits",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_special_chars",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_at_symbol",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_ip_address",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_subdomains",
+      "value": 1,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "uses_https",
+      "value": 1,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_https_token_in_path",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "is_shortened_url",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "tld_in_subdomain",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     }
+    ],
+    "benign_baseline_probability": 0.2515
+   }
+  },
+  {
+   "raw_input": "https://github.com/python/cpython",
+   "note": "web golden master: LogisticRegression (--fast) \u2014 the exact model the browser runs",
+   "response": {
+    "url": "https://github.com/python/cpython",
+    "verdict": "LEGITIMATE",
+    "phishing_probability": 0.0932,
+    "threshold": 0.5,
+    "features": {
+     "url_length": 33,
+     "hostname_length": 10,
+     "path_length": 15,
+     "num_dots": 1,
+     "num_hyphens": 0,
+     "num_underscores": 0,
+     "num_slashes": 4,
+     "num_digits": 0,
+     "num_special_chars": 0,
+     "has_at_symbol": 0,
+     "has_ip_address": 0,
+     "num_subdomains": 0,
+     "uses_https": 1,
+     "has_https_token_in_path": 0,
+     "is_shortened_url": 0,
+     "url_entropy": 3.7377,
+     "tld_in_subdomain": 0,
+     "digit_letter_ratio": 0.0
+    },
+    "feature_contributions": [
+     {
+      "feature": "num_subdomains",
+      "value": 0,
+      "contribution": -0.1575,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "hostname_length",
+      "value": 10,
+      "contribution": -0.0484,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_dots",
+      "value": 1,
+      "contribution": 0.0393,
+      "direction": "phishing"
+     },
+     {
+      "feature": "path_length",
+      "value": 15,
+      "contribution": -0.0354,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "url_entropy",
+      "value": 3.7377,
+      "contribution": 0.0318,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_slashes",
+      "value": 4,
+      "contribution": -0.0124,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "url_length",
+      "value": 33,
+      "contribution": -0.0075,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "digit_letter_ratio",
+      "value": 0.0,
+      "contribution": 0.0011,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_hyphens",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_underscores",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_digits",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_special_chars",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_at_symbol",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_ip_address",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "uses_https",
+      "value": 1,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_https_token_in_path",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "is_shortened_url",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "tld_in_subdomain",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     }
+    ],
+    "benign_baseline_probability": 0.2515
+   }
+  },
+  {
+   "raw_input": "http://paypal.com.verify-login.ru/user/login",
+   "note": "web golden master: LogisticRegression (--fast) \u2014 the exact model the browser runs",
+   "response": {
+    "url": "http://paypal.com.verify-login.ru/user/login",
+    "verdict": "PHISHING",
+    "phishing_probability": 0.8219,
+    "threshold": 0.5,
+    "features": {
+     "url_length": 44,
+     "hostname_length": 26,
+     "path_length": 11,
+     "num_dots": 3,
+     "num_hyphens": 1,
+     "num_underscores": 0,
+     "num_slashes": 4,
+     "num_digits": 0,
+     "num_special_chars": 0,
+     "has_at_symbol": 0,
+     "has_ip_address": 0,
+     "num_subdomains": 2,
+     "uses_https": 0,
+     "has_https_token_in_path": 0,
+     "is_shortened_url": 0,
+     "url_entropy": 4.311,
+     "tld_in_subdomain": 1,
+     "digit_letter_ratio": 0.0
+    },
+    "feature_contributions": [
+     {
+      "feature": "num_subdomains",
+      "value": 2,
+      "contribution": 0.2354,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_entropy",
+      "value": 4.311,
+      "contribution": 0.2026,
+      "direction": "phishing"
+     },
+     {
+      "feature": "hostname_length",
+      "value": 26,
+      "contribution": 0.2021,
+      "direction": "phishing"
+     },
+     {
+      "feature": "uses_https",
+      "value": 0,
+      "contribution": 0.088,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_dots",
+      "value": 3,
+      "contribution": -0.0709,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "tld_in_subdomain",
+      "value": 1,
+      "contribution": -0.0529,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_slashes",
+      "value": 4,
+      "contribution": -0.0195,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "path_length",
+      "value": 11,
+      "contribution": -0.0103,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_hyphens",
+      "value": 1,
+      "contribution": 0.0078,
+      "direction": "phishing"
+     },
+     {
+      "feature": "digit_letter_ratio",
+      "value": 0.0,
+      "contribution": 0.002,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_length",
+      "value": 44,
+      "contribution": -0.001,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_underscores",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_digits",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_special_chars",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_at_symbol",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_ip_address",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_https_token_in_path",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "is_shortened_url",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     }
+    ],
+    "benign_baseline_probability": 0.2515
+   }
+  },
+  {
+   "raw_input": "https://bit.ly/3xY2zAb",
+   "note": "web golden master: LogisticRegression (--fast) \u2014 the exact model the browser runs",
+   "response": {
+    "url": "https://bit.ly/3xY2zAb",
+    "verdict": "PHISHING",
+    "phishing_probability": 0.8914,
+    "threshold": 0.5,
+    "features": {
+     "url_length": 22,
+     "hostname_length": 6,
+     "path_length": 8,
+     "num_dots": 1,
+     "num_hyphens": 0,
+     "num_underscores": 0,
+     "num_slashes": 3,
+     "num_digits": 2,
+     "num_special_chars": 0,
+     "has_at_symbol": 0,
+     "has_ip_address": 0,
+     "num_subdomains": 0,
+     "uses_https": 1,
+     "has_https_token_in_path": 0,
+     "is_shortened_url": 1,
+     "url_entropy": 3.9363,
+     "tld_in_subdomain": 0,
+     "digit_letter_ratio": 0.1333
+    },
+    "feature_contributions": [
+     {
+      "feature": "is_shortened_url",
+      "value": 1,
+      "contribution": 0.7372,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_entropy",
+      "value": 3.9363,
+      "contribution": 0.0816,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_subdomains",
+      "value": 0,
+      "contribution": -0.0725,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_dots",
+      "value": 1,
+      "contribution": 0.0716,
+      "direction": "phishing"
+     },
+     {
+      "feature": "hostname_length",
+      "value": 6,
+      "contribution": -0.0592,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_digits",
+      "value": 2,
+      "contribution": 0.0338,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_length",
+      "value": 22,
+      "contribution": -0.0149,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "path_length",
+      "value": 8,
+      "contribution": 0.0148,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_slashes",
+      "value": 3,
+      "contribution": -0.0066,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "digit_letter_ratio",
+      "value": 0.1333,
+      "contribution": -0.0044,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_hyphens",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_underscores",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_special_chars",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_at_symbol",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_ip_address",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "uses_https",
+      "value": 1,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_https_token_in_path",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "tld_in_subdomain",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     }
+    ],
+    "benign_baseline_probability": 0.2515
+   }
+  },
+  {
+   "raw_input": "http://192.168.1.1/admin",
+   "note": "web golden master: LogisticRegression (--fast) \u2014 the exact model the browser runs",
+   "response": {
+    "url": "http://192.168.1.1/admin",
+    "verdict": "PHISHING",
+    "phishing_probability": 0.9709,
+    "threshold": 0.5,
+    "features": {
+     "url_length": 24,
+     "hostname_length": 11,
+     "path_length": 6,
+     "num_dots": 3,
+     "num_hyphens": 0,
+     "num_underscores": 0,
+     "num_slashes": 3,
+     "num_digits": 8,
+     "num_special_chars": 0,
+     "has_at_symbol": 0,
+     "has_ip_address": 1,
+     "num_subdomains": 2,
+     "uses_https": 0,
+     "has_https_token_in_path": 0,
+     "is_shortened_url": 0,
+     "url_entropy": 3.7721,
+     "tld_in_subdomain": 0,
+     "digit_letter_ratio": 0.8889
+    },
+    "feature_contributions": [
+     {
+      "feature": "has_ip_address",
+      "value": 1,
+      "contribution": 0.2315,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_digits",
+      "value": 8,
+      "contribution": 0.0646,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_subdomains",
+      "value": 2,
+      "contribution": 0.0598,
+      "direction": "phishing"
+     },
+     {
+      "feature": "uses_https",
+      "value": 0,
+      "contribution": 0.0187,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_entropy",
+      "value": 3.7721,
+      "contribution": 0.0174,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_dots",
+      "value": 3,
+      "contribution": -0.0128,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "path_length",
+      "value": 6,
+      "contribution": 0.0094,
+      "direction": "phishing"
+     },
+     {
+      "feature": "digit_letter_ratio",
+      "value": 0.8889,
+      "contribution": -0.0091,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "hostname_length",
+      "value": 11,
+      "contribution": -0.009,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "url_length",
+      "value": 24,
+      "contribution": -0.004,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_slashes",
+      "value": 3,
+      "contribution": -0.0019,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_hyphens",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_underscores",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_special_chars",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_at_symbol",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_https_token_in_path",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "is_shortened_url",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "tld_in_subdomain",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     }
+    ],
+    "benign_baseline_probability": 0.2515
+   }
+  },
+  {
+   "raw_input": "bit.ly/3xample",
+   "note": "Note: No scheme detected. Assumed http:// \u2014 checking: http://bit.ly/3xample",
+   "response": {
+    "url": "http://bit.ly/3xample",
+    "verdict": "PHISHING",
+    "phishing_probability": 0.9084,
+    "threshold": 0.5,
+    "features": {
+     "url_length": 21,
+     "hostname_length": 6,
+     "path_length": 8,
+     "num_dots": 1,
+     "num_hyphens": 0,
+     "num_underscores": 0,
+     "num_slashes": 3,
+     "num_digits": 1,
+     "num_special_chars": 0,
+     "has_at_symbol": 0,
+     "has_ip_address": 0,
+     "num_subdomains": 0,
+     "uses_https": 0,
+     "has_https_token_in_path": 0,
+     "is_shortened_url": 1,
+     "url_entropy": 3.749,
+     "tld_in_subdomain": 0,
+     "digit_letter_ratio": 0.0667
+    },
+    "feature_contributions": [
+     {
+      "feature": "is_shortened_url",
+      "value": 1,
+      "contribution": 0.7279,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_dots",
+      "value": 1,
+      "contribution": 0.0623,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_subdomains",
+      "value": 0,
+      "contribution": -0.0615,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "uses_https",
+      "value": 0,
+      "contribution": 0.0527,
+      "direction": "phishing"
+     },
+     {
+      "feature": "hostname_length",
+      "value": 6,
+      "contribution": -0.0503,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "url_entropy",
+      "value": 3.749,
+      "contribution": 0.0465,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_digits",
+      "value": 1,
+      "contribution": 0.0137,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_length",
+      "value": 21,
+      "contribution": -0.0133,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "path_length",
+      "value": 8,
+      "contribution": 0.0128,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_slashes",
+      "value": 3,
+      "contribution": -0.0056,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "digit_letter_ratio",
+      "value": 0.0667,
+      "contribution": -0.0014,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_hyphens",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_underscores",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_special_chars",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_at_symbol",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_ip_address",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_https_token_in_path",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "tld_in_subdomain",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     }
+    ],
+    "benign_baseline_probability": 0.2515
+   }
+  },
+  {
+   "raw_input": "https://en.wikipedia.org/wiki/Phishing",
+   "note": "web golden master: LogisticRegression (--fast) \u2014 the exact model the browser runs",
+   "response": {
+    "url": "https://en.wikipedia.org/wiki/Phishing",
+    "verdict": "LEGITIMATE",
+    "phishing_probability": 0.3058,
+    "threshold": 0.5,
+    "features": {
+     "url_length": 38,
+     "hostname_length": 16,
+     "path_length": 14,
+     "num_dots": 2,
+     "num_hyphens": 0,
+     "num_underscores": 0,
+     "num_slashes": 4,
+     "num_digits": 0,
+     "num_special_chars": 0,
+     "has_at_symbol": 0,
+     "has_ip_address": 0,
+     "num_subdomains": 1,
+     "uses_https": 1,
+     "has_https_token_in_path": 0,
+     "is_shortened_url": 0,
+     "url_entropy": 3.9214,
+     "tld_in_subdomain": 0,
+     "digit_letter_ratio": 0.0
+    },
+    "feature_contributions": [
+     {
+      "feature": "url_entropy",
+      "value": 3.9214,
+      "contribution": 0.1175,
+      "direction": "phishing"
+     },
+     {
+      "feature": "path_length",
+      "value": 14,
+      "contribution": -0.0645,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "num_slashes",
+      "value": 4,
+      "contribution": -0.0303,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "hostname_length",
+      "value": 16,
+      "contribution": 0.0197,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_length",
+      "value": 38,
+      "contribution": -0.0107,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "digit_letter_ratio",
+      "value": 0.0,
+      "contribution": 0.0029,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_dots",
+      "value": 2,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_hyphens",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_underscores",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_digits",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_special_chars",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_at_symbol",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_ip_address",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_subdomains",
+      "value": 1,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "uses_https",
+      "value": 1,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_https_token_in_path",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "is_shortened_url",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "tld_in_subdomain",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     }
+    ],
+    "benign_baseline_probability": 0.2515
+   }
+  },
+  {
+   "raw_input": "http://user@legitimate-looking.com@phishing-site.net",
+   "note": "web golden master: LogisticRegression (--fast) \u2014 the exact model the browser runs",
+   "response": {
+    "url": "http://user@legitimate-looking.com@phishing-site.net",
+    "verdict": "PHISHING",
+    "phishing_probability": 0.997,
+    "threshold": 0.5,
+    "features": {
+     "url_length": 52,
+     "hostname_length": 17,
+     "path_length": 0,
+     "num_dots": 2,
+     "num_hyphens": 2,
+     "num_underscores": 0,
+     "num_slashes": 2,
+     "num_digits": 0,
+     "num_special_chars": 2,
+     "has_at_symbol": 1,
+     "has_ip_address": 0,
+     "num_subdomains": 0,
+     "uses_https": 0,
+     "has_https_token_in_path": 0,
+     "is_shortened_url": 0,
+     "url_entropy": 4.1542,
+     "tld_in_subdomain": 0,
+     "digit_letter_ratio": 0.0
+    },
+    "feature_contributions": [
+     {
+      "feature": "has_at_symbol",
+      "value": 1,
+      "contribution": 0.558,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_entropy",
+      "value": 4.1542,
+      "contribution": 0.0042,
+      "direction": "phishing"
+     },
+     {
+      "feature": "path_length",
+      "value": 0,
+      "contribution": 0.0032,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_subdomains",
+      "value": 0,
+      "contribution": -0.0021,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "uses_https",
+      "value": 0,
+      "contribution": 0.002,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_special_chars",
+      "value": 2,
+      "contribution": -0.0011,
+      "direction": "legitimate"
+     },
+     {
+      "feature": "hostname_length",
+      "value": 17,
+      "contribution": 0.0006,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_hyphens",
+      "value": 2,
+      "contribution": 0.0003,
+      "direction": "phishing"
+     },
+     {
+      "feature": "url_length",
+      "value": 52,
+      "contribution": 0.0002,
+      "direction": "phishing"
+     },
+     {
+      "feature": "num_dots",
+      "value": 2,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_underscores",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_slashes",
+      "value": 2,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "num_digits",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_ip_address",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "has_https_token_in_path",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "is_shortened_url",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "tld_in_subdomain",
+      "value": 0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     },
+     {
+      "feature": "digit_letter_ratio",
+      "value": 0.0,
+      "contribution": 0.0,
+      "direction": "neutral"
+     }
+    ],
+    "benign_baseline_probability": 0.2515
+   }
+  }
+ ]
+}
