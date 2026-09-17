@@ -1,0 +1,125 @@
+{
+  "kind": "LogisticRegression",
+  "featureNames": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "num_dots",
+    "num_hyphens",
+    "num_underscores",
+    "num_slashes",
+    "num_digits",
+    "num_special_chars",
+    "has_at_symbol",
+    "has_ip_address",
+    "num_subdomains",
+    "uses_https",
+    "has_https_token_in_path",
+    "is_shortened_url",
+    "url_entropy",
+    "tld_in_subdomain",
+    "digit_letter_ratio"
+  ],
+  "scaler": {
+    "means": [
+      50.53150761,
+      21.17173164,
+      15.94473942,
+      1.94300452,
+      1.20648782,
+      0.21985469,
+      3.59941316,
+      3.9003889,
+      0.47923944,
+      0.00408691,
+      0.00081505,
+      0.63476317,
+      0.90990173,
+      0.00050068,
+      0.00091985,
+      4.18768089,
+      0.00691631,
+      0.08996433
+    ],
+    "stds": [
+      98.96904007,
+      10.84470861,
+      23.99853959,
+      0.93773609,
+      2.36400925,
+      1.01225953,
+      1.36099775,
+      15.38115734,
+      2.67159896,
+      0.06379816,
+      0.02853749,
+      0.61815156,
+      0.2863225,
+      0.02237017,
+      0.030315,
+      0.3732473,
+      0.08287624,
+      0.16680241
+    ]
+  },
+  "weights": [
+    0.70884555,
+    1.02591009,
+    -1.73416308,
+    -0.55336361,
+    0.12340858,
+    -0.10278751,
+    -0.09465475,
+    2.37826254,
+    -0.60222262,
+    0.38597634,
+    0.07031497,
+    0.72930903,
+    -0.14740107,
+    0.56575058,
+    0.11541981,
+    0.38506818,
+    -0.03440309,
+    -0.07497932
+  ],
+  "bias": 0.10570691,
+  "threshold": 0.5,
+  "metrics": {
+    "datasetLabel": "PhishTank + Tranco + ealvaradob benign",
+    "nSamples": 107355,
+    "nPhishing": 48338,
+    "nLegitimate": 59017,
+    "testSetSize": 21471,
+    "logisticRegression": {
+      "precision": 0.8124,
+      "recall": 0.7963,
+      "f1": 0.8043,
+      "rocAuc": 0.885,
+      "cvF1": "0.8015 \u00b1 0.0033",
+      "confusion": {
+        "tn": 10025,
+        "fp": 1778,
+        "fn": 1969,
+        "tp": 7699
+      }
+    },
+    "randomForest": {
+      "precision": 0.8885,
+      "recall": 0.8872,
+      "f1": 0.8878,
+      "rocAuc": 0.9545,
+      "cvF1": "0.8890 \u00b1 0.0023",
+      "confusion": {
+        "tn": 10727,
+        "fp": 1076,
+        "fn": 1091,
+        "tp": 8577
+      }
+    }
+  },
+  "meta": {
+    "source": "metrics come from reports/training_report.json (read at export time \u2014 never baked in)",
+    "trainedOn": "real URLs (PhishTank + Tranco + ealvaradob benign) \u2014 see metrics block",
+    "exportedAt": "2026-09-14T12:12:42"
+  }
+}
