@@ -3,7 +3,7 @@
  *
  * The model was trained in Python (scikit-learn) on 107,355 real URLs
  * (PhishTank verified phishing + Tranco top-10k + ealvaradob benign deep links)
- * and exported to JSON by phishing-detector/src/export_model.py.
+ * and exported to JSON by training/src/export_model.py.
  *
  * Inference here is mathematically identical to the Python pipeline:
  *   z = bias + sum_i( w_i * (x_i - mean_i) / std_i )
