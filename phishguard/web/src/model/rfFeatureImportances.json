@@ -1,0 +1,26 @@
+{
+  "kind": "RandomForest",
+  "note": "Global feature importances only. A 200-tree forest cannot be exported to JSON losslessly; authoritative predictions come from the Python CLI (python src/check_url.py <url>).",
+  "testF1": 0.8878,
+  "testRocAuc": 0.9545,
+  "importances": {
+    "hostname_length": 0.175164,
+    "path_length": 0.173848,
+    "url_entropy": 0.141334,
+    "num_subdomains": 0.097356,
+    "num_slashes": 0.092355,
+    "url_length": 0.084331,
+    "num_dots": 0.055739,
+    "digit_letter_ratio": 0.046492,
+    "num_hyphens": 0.044934,
+    "num_digits": 0.040314,
+    "uses_https": 0.017037,
+    "num_special_chars": 0.015789,
+    "num_underscores": 0.008661,
+    "has_at_symbol": 0.004282,
+    "tld_in_subdomain": 0.001542,
+    "has_https_token_in_path": 0.000377,
+    "is_shortened_url": 0.000278,
+    "has_ip_address": 0.000167
+  }
+}

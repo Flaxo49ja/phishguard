@@ -100,7 +100,8 @@ class Guide(FPDF):
         self.cell(9, 7, num, border=0, align="C", fill=True, new_x=XPos.RIGHT, new_y=YPos.NEXT)
         self.set_font("DejaVu", "B", 17)
         self.set_text_color(*INK)
-        self.cell(0, 10, "  " + title, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        # multi_cell: long chapter titles wrap instead of clipping off the page
+        self.multi_cell(0, 10, "  " + title, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
         self.ln(1)
         self.set_draw_color(*GOLD)
         self.set_line_width(0.9)
@@ -112,14 +113,15 @@ class Guide(FPDF):
         self.ln(1.5)
         self.set_font("DejaVu", "B", 12.5)
         self.set_text_color(*BLUE)
-        self.cell(0, 7, text, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        # multi_cell: long sub-headings wrap instead of clipping
+        self.multi_cell(0, 7, text, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
         self.ln(0.8)
 
     def h3(self, text):
         self._ensure(10)
         self.set_font("DejaVu", "B", 10)
         self.set_text_color(*INK)
-        self.cell(0, 5.5, text, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        self.multi_cell(0, 5.5, text, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
     def para(self, text, size=9.6, lh=5.2, color=INK, after=2.2):
         self.set_font("DejaVu", "", size)
@@ -147,12 +149,17 @@ class Guide(FPDF):
             self.set_font("DejaVu", "B", 6.4)
             self.set_text_color(*CODE_CM)
             self.cell(0, 4, "  " + lang.upper(), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        # box hugs the content: widest rendered line + padding, never wider
+        # than USABLE - kills the dead right margin on short comment blocks
+        self.set_font("DejaVuMono", "", fs)
+        longest = max((self.get_string_width(ln[:110]) for ln in lines), default=0)
+        box_w = min(USABLE, max(longest + 8, 60))
         x0, y0 = self.get_x(), self.get_y()
         box_h = len(lines) * lh + 4
         self.set_fill_color(*CODE_BG)
         self.set_draw_color(50, 62, 84)
         self.set_line_width(0.25)
-        self.rect(x0, y0, USABLE, box_h, "DF")
+        self.rect(x0, y0, box_w, box_h, "DF")
         self.set_xy(x0 + 3, y0 + 2)
         for ln in lines:
             self.set_x(x0 + 3)
@@ -166,9 +173,8 @@ class Guide(FPDF):
             else:
                 self.set_text_color(*CODE_TX)
                 self.set_font("DejaVuMono", "", fs)
-            self.cell(USABLE - 6, lh, ln[:110], new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+            self.cell(box_w - 6, lh, ln[:110], new_x=XPos.LMARGIN, new_y=YPos.NEXT)
         self.set_xy(x0, y0 + box_h + 2.5)
-
     def story(self, label, text):
         # estimate height
         self.set_font("DejaVu", "", 9.2)
@@ -210,7 +216,10 @@ class Guide(FPDF):
         for row in rows:
             h = 6.0
             for wdt, cell_text in zip(widths, row):
-                lines_n = len(self.multi_cell(wdt - 2, LH, str(cell_text), dry_run=True, output="LINES"))
+                # measure in the SAME box the renderer uses: width wdt, text
+                # prefixed with the same " " - mismatched measuring made
+                # borderline rows over-predict a wrap line (uneven heights)
+                lines_n = len(self.multi_cell(wdt, LH, " " + str(cell_text), dry_run=True, output="LINES"))
                 h = max(h, lines_n * LH + 2.4)
             if self.get_y() + h > PAGE_H - 18:
                 self.add_page()
