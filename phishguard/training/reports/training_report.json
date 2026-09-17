@@ -1,0 +1,89 @@
+{
+  "dataset": "custom",
+  "n_samples": 107355,
+  "n_phishing": 48338,
+  "n_legitimate": 59017,
+  "class_balance_ratio": 0.45026314563830283,
+  "train_size": 85884,
+  "test_size": 21471,
+  "comparison": {
+    "LogisticRegression": {
+      "precision": 0.8123878864619606,
+      "recall": 0.7963384360777824,
+      "f1": 0.8042831026377645,
+      "confusion_matrix": [
+        [
+          10025,
+          1778
+        ],
+        [
+          1969,
+          7699
+        ]
+      ],
+      "roc_auc": 0.8850076193962173,
+      "cv_f1_mean": 0.8014819984148331,
+      "cv_f1_std": 0.0032781642682125477
+    },
+    "RandomForest": {
+      "precision": 0.8885320625712214,
+      "recall": 0.8871534960695077,
+      "f1": 0.8878422441902593,
+      "confusion_matrix": [
+        [
+          10727,
+          1076
+        ],
+        [
+          1091,
+          8577
+        ]
+      ],
+      "roc_auc": 0.9545302588687806,
+      "cv_f1_mean": 0.8890408655772332,
+      "cv_f1_std": 0.0023396537031055865
+    }
+  },
+  "best_model": "RandomForest",
+  "best_metrics": {
+    "precision": 0.8885320625712214,
+    "recall": 0.8871534960695077,
+    "f1": 0.8878422441902593,
+    "confusion_matrix": [
+      [
+        10727,
+        1076
+      ],
+      [
+        1091,
+        8577
+      ]
+    ],
+    "roc_auc": 0.9545302588687806,
+    "cv_f1_mean": 0.8890408655772332,
+    "cv_f1_std": 0.0023396537031055865
+  },
+  "feature_names": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "num_dots",
+    "num_hyphens",
+    "num_underscores",
+    "num_slashes",
+    "num_digits",
+    "num_special_chars",
+    "has_at_symbol",
+    "has_ip_address",
+    "num_subdomains",
+    "uses_https",
+    "has_https_token_in_path",
+    "is_shortened_url",
+    "url_entropy",
+    "tld_in_subdomain",
+    "digit_letter_ratio"
+  ],
+  "excluded_features": [
+    "domain_age_flag deliberately excluded: requires WHOIS/network access and breaks the offline-only inference guarantee."
+  ]
+}

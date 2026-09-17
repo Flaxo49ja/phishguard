@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Large cached raw downloads (regenerable: python -m src.fetch_data / --custom)
+data/raw/*.csv
+data/raw/*.json
+
+# Optional: uncomment to keep trained artifacts out of version control too
+# models/*.pkl
+
+# OS / editor noise
+.DS_Store
