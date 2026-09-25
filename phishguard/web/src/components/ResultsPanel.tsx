@@ -19,31 +19,32 @@ export default function ResultsPanel() {
   const phishPct = ((REAL_METRICS.dataset.phishing / REAL_METRICS.dataset.totalUrls) * 100).toFixed(1);
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6">
+    <div className="max-w-4xl space-y-6">
       <div>
-        <h2 className="text-3xl font-bold text-white">Model performance</h2>
-        <p className="mt-2 text-sm text-slate-400">
+        <h2 className="text-4xl font-black uppercase tracking-tight text-black">Model performance</h2>
+        <p className="mt-2 border-l-4 border-black pl-4 text-sm text-neutral-700">
           Measured on {REAL_METRICS.dataset.testSetSize.toLocaleString()} held-out URLs. Browser verdicts come from the
           exported LogisticRegression; RandomForest (the stronger model) is shown for comparison.
         </p>
       </div>
 
       {/* Metrics table */}
-      <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 p-6">
-        <table className="w-full text-sm">
+      <div className="border-2 border-black p-5">
+        <h3 className="mb-4 font-mono text-sm font-bold uppercase tracking-wider">Metrics</h3>
+        <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="border-b border-white/10 text-left text-slate-400">
-              <th className="py-2 pr-4 font-medium">Metric</th>
-              <th className="py-2 pr-4 text-right font-medium">RandomForest</th>
-              <th className="py-2 text-right font-medium">LogisticRegression</th>
+            <tr className="border-b-2 border-black text-left">
+              <th className="py-2 pr-4 font-mono text-xs font-bold uppercase tracking-wider">Metric</th>
+              <th className="py-2 pr-4 text-right font-mono text-xs font-bold uppercase tracking-wider">RandomForest</th>
+              <th className="py-2 text-right font-mono text-xs font-bold uppercase tracking-wider">LogisticRegression</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((r) => (
-              <tr key={r.metric} className="border-b border-white/5 last:border-0">
-                <td className="py-2.5 pr-4 text-slate-300">{r.metric}</td>
-                <td className="py-2.5 pr-4 text-right font-mono text-slate-200">{r.rf}</td>
-                <td className="py-2.5 text-right font-mono text-slate-400">{r.lr}</td>
+              <tr key={r.metric} className="border-b border-neutral-300 last:border-0">
+                <td className="py-2.5 pr-4 text-black">{r.metric}</td>
+                <td className="py-2.5 pr-4 text-right font-mono text-black">{r.rf}</td>
+                <td className="py-2.5 text-right font-mono text-neutral-600">{r.lr}</td>
               </tr>
             ))}
           </tbody>
@@ -52,63 +53,63 @@ export default function ResultsPanel() {
 
       {/* Confusion matrix */}
       {cm && (
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="mb-4 font-semibold text-white">Confusion matrix — RandomForest</h3>
+        <div className="border-2 border-black p-5">
+          <h3 className="mb-4 font-mono text-sm font-bold uppercase tracking-wider">Confusion matrix — RandomForest</h3>
           <div className="mx-auto grid w-fit grid-cols-3 gap-1.5 text-center">
             <div />
-            <div className="pb-1 text-xs text-slate-500">pred. legit</div>
-            <div className="pb-1 text-xs text-slate-500">pred. phish</div>
-            <div className="flex items-center pr-2 text-xs text-slate-500">actual legit</div>
-            <div className="flex h-24 w-24 flex-col items-center justify-center rounded-xl border border-emerald-500/40 bg-emerald-500/10">
-              <span className="text-2xl font-bold text-emerald-400">{cm.tn.toLocaleString()}</span>
-              <span className="text-xs text-emerald-300/80">TN</span>
+            <div className="pb-1 font-mono text-xs font-bold uppercase text-neutral-600">pred. legit</div>
+            <div className="pb-1 font-mono text-xs font-bold uppercase text-neutral-600">pred. phish</div>
+            <div className="flex items-center pr-2 font-mono text-xs text-neutral-600">actual legit</div>
+            <div className="flex h-24 w-24 flex-col items-center justify-center border-2 border-black bg-green-100">
+              <span className="font-mono text-2xl font-bold text-green-800">{cm.tn.toLocaleString()}</span>
+              <span className="font-mono text-xs text-green-800">TN</span>
             </div>
-            <div className="flex h-24 w-24 flex-col items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/5">
-              <span className="text-2xl font-bold text-amber-400">{cm.fp.toLocaleString()}</span>
-              <span className="text-xs text-amber-300/80">FP</span>
+            <div className="flex h-24 w-24 flex-col items-center justify-center border-2 border-black bg-amber-100">
+              <span className="font-mono text-2xl font-bold text-amber-800">{cm.fp.toLocaleString()}</span>
+              <span className="font-mono text-xs text-amber-800">FP</span>
             </div>
-            <div className="flex items-center pr-2 text-xs text-slate-500">actual phish</div>
-            <div className="flex h-24 w-24 flex-col items-center justify-center rounded-xl border border-red-500/30 bg-red-500/5">
-              <span className="text-2xl font-bold text-red-400">{cm.fn.toLocaleString()}</span>
-              <span className="text-xs text-red-300/80">FN</span>
+            <div className="flex items-center pr-2 font-mono text-xs text-neutral-600">actual phish</div>
+            <div className="flex h-24 w-24 flex-col items-center justify-center border-2 border-black bg-red-100">
+              <span className="font-mono text-2xl font-bold text-red-800">{cm.fn.toLocaleString()}</span>
+              <span className="font-mono text-xs text-red-800">FN</span>
             </div>
-            <div className="flex h-24 w-24 flex-col items-center justify-center rounded-xl border border-emerald-500/40 bg-emerald-500/10">
-              <span className="text-2xl font-bold text-emerald-400">{cm.tp.toLocaleString()}</span>
-              <span className="text-xs text-emerald-300/80">TP</span>
+            <div className="flex h-24 w-24 flex-col items-center justify-center border-2 border-black bg-green-700">
+              <span className="font-mono text-2xl font-bold text-white">{cm.tp.toLocaleString()}</span>
+              <span className="font-mono text-xs text-white">TP</span>
             </div>
           </div>
         </div>
       )}
 
       {/* Feature importances */}
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <h3 className="mb-4 font-semibold text-white">Feature importance — RandomForest (top 10)</h3>
+      <div className="border-2 border-black p-5">
+        <h3 className="mb-4 font-mono text-sm font-bold uppercase tracking-wider">Feature importance — RandomForest (top 10)</h3>
         <div className="space-y-2.5">
           {importances.slice(0, 10).map(([name, imp], i) => (
             <div key={name} className="flex items-center gap-3">
-              <span className="w-4 text-xs text-slate-500">{i + 1}</span>
-              <span className="w-44 truncate font-mono text-xs text-slate-300">{name}</span>
-              <div className="h-5 flex-1 overflow-hidden rounded-full bg-slate-800/60">
-                <div className="animate-bar h-full rounded-full bg-gradient-to-r from-red-500 to-orange-400" style={{ width: `${(imp / maxImp) * 100}%` }} />
+              <span className="w-4 font-mono text-xs text-neutral-500">{i + 1}</span>
+              <span className="w-44 truncate font-mono text-xs text-black">{name}</span>
+              <div className="h-4 flex-1 border-2 border-black">
+                <div className="h-full bg-black" style={{ width: `${(imp / maxImp) * 100}%` }} />
               </div>
-              <span className="w-14 text-right font-mono text-xs text-slate-400">{imp.toFixed(3)}</span>
+              <span className="w-14 text-right font-mono text-xs text-neutral-600">{imp.toFixed(3)}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Class balance */}
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <h3 className="mb-4 font-semibold text-white">Dataset balance</h3>
-        <div className="flex h-8 overflow-hidden rounded-full">
-          <div className="flex items-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-500 text-xs font-bold text-white" style={{ width: `${legitPct}%` }}>
+      <div className="border-2 border-black p-5">
+        <h3 className="mb-4 font-mono text-sm font-bold uppercase tracking-wider">Dataset balance</h3>
+        <div className="flex h-8 border-2 border-black">
+          <div className="flex items-center justify-center bg-green-700 text-xs font-bold text-white" style={{ width: `${legitPct}%` }}>
             {legitPct}%
           </div>
-          <div className="flex items-center justify-center bg-gradient-to-r from-red-500 to-red-600 text-xs font-bold text-white" style={{ width: `${phishPct}%` }}>
+          <div className="flex items-center justify-center bg-red-700 text-xs font-bold text-white" style={{ width: `${phishPct}%` }}>
             {phishPct}%
           </div>
         </div>
-        <p className="mt-3 text-xs text-slate-500">
+        <p className="mt-3 font-mono text-xs text-neutral-600">
           {REAL_METRICS.dataset.legitimate.toLocaleString()} legitimate vs {REAL_METRICS.dataset.phishing.toLocaleString()} phishing of {REAL_METRICS.dataset.totalUrls.toLocaleString()} total training URLs.
         </p>
       </div>

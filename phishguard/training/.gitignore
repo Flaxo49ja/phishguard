@@ -3,9 +3,8 @@ __pycache__/
 *.pyc
 .venv/
 
-# Large cached raw downloads (regenerable: python -m src.fetch_data / --custom)
-data/raw/*.csv
-data/raw/*.json
+# Large datasets (regenerable: python -m src.fetch_data / --custom) — never commit
+data/
 
 # Optional: uncomment to keep trained artifacts out of version control too
 # models/*.pkl

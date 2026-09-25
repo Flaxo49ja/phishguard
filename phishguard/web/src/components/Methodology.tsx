@@ -19,19 +19,22 @@ const cards = [
 
 export default function Methodology() {
   return (
-    <div className="mx-auto max-w-4xl space-y-4">
-      <h2 className="text-3xl font-bold text-white">Methodology</h2>
-      <div className="grid gap-4 md:grid-cols-2">
-        {cards.map((c) => (
-          <section key={c.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="mb-2 font-semibold text-white">{c.title}</h3>
-            <p className="text-sm leading-relaxed text-slate-400">{c.body}</p>
+    <div className="max-w-4xl space-y-6">
+      <h2 className="text-4xl font-black uppercase tracking-tight text-black">Methodology</h2>
+      <div className="border-2 border-black">
+        {cards.map((c, i) => (
+          <section key={c.title} className={`p-5 ${i > 0 ? 'border-t-2 border-black' : ''}`}>
+            <h3 className="mb-2 font-mono text-sm font-bold uppercase tracking-wider">
+              <span className="mr-2 bg-black px-1.5 py-0.5 text-white">{String(i + 1).padStart(2, '0')}</span>
+              {c.title}
+            </h3>
+            <p className="text-sm leading-relaxed text-neutral-700">{c.body}</p>
           </section>
         ))}
       </div>
-      <section className="rounded-2xl border border-amber-500/20 bg-amber-950/20 p-6">
-        <h3 className="mb-2 font-semibold text-amber-400">Limitations</h3>
-        <p className="text-sm leading-relaxed text-slate-400">
+      <section className="border-2 border-amber-700 border-l-8 bg-amber-50 p-5">
+        <h3 className="mb-2 font-mono text-sm font-bold uppercase tracking-wider text-amber-800">Limitations</h3>
+        <p className="text-sm leading-relaxed text-neutral-700">
           Lexical features cannot see page content, domain age, or reputation. Clean-looking phishing URLs may pass.
           The model reflects its training data and needs retraining as tactics evolve.
         </p>

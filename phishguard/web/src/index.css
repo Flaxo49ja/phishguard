@@ -4,27 +4,7 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  background-color: #020617;
-  color: #e2e8f0;
-}
-
-/* Animated entrance for cards/results */
-@keyframes rise-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-rise {
-  animation: rise-in 0.35s ease-out both;
-}
-
-@keyframes bar-grow {
-  from { width: 0; }
-}
-.animate-bar {
-  animation: bar-grow 0.8s ease-out both;
+  background-color: #ffffff;
+  color: #111111;
 }

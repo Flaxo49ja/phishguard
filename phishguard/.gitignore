@@ -3,15 +3,17 @@ __pycache__/
 *.pyc
 .venv/
 
-# Regenerable raw downloads
-training/data/raw/*.csv
-training/data/raw/*.json
+# Regenerable datasets (python -m src.fetch_data) — never commit
+data/
 
 # Node
 node_modules/
 dist/
 build/
 *.log
+
+# Build/submission artifacts
+*.zip
 
 # OS / editor
 .DS_Store

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import type { AnalysisResult } from './UrlChecker';
 
-const riskColor = { high: 'text-red-400', medium: 'text-amber-400', low: 'text-emerald-400', neutral: 'text-slate-400' } as const;
-const riskBg = { high: 'border-red-500/25 bg-red-500/5', medium: 'border-amber-500/25 bg-amber-500/5', low: 'border-emerald-500/25 bg-emerald-500/5', neutral: 'border-white/5 bg-slate-800/30' } as const;
+const riskColor = { high: 'text-red-700', medium: 'text-amber-700', low: 'text-green-700', neutral: 'text-neutral-600' } as const;
+const riskBg = { high: 'bg-red-100', medium: 'bg-amber-100', low: 'bg-green-100', neutral: 'bg-white' } as const;
 
 export default function FeatureGrid({ result }: { result: AnalysisResult }) {
   const [open, setOpen] = useState(false);
@@ -11,16 +11,19 @@ export default function FeatureGrid({ result }: { result: AnalysisResult }) {
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full rounded-xl border border-white/10 py-3 text-sm text-slate-400 transition hover:bg-white/5 hover:text-slate-200"
+        className="w-full border-2 border-black bg-white py-3 font-mono text-sm font-bold uppercase tracking-wider transition-colors hover:bg-neutral-200"
       >
         {open ? 'Hide' : 'Show'} all 18 extracted features
       </button>
       {open && (
-        <div className="animate-rise mt-3 grid grid-cols-1 gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 sm:grid-cols-2">
-          {entries.map(([name, data]) => (
-            <div key={name} className={`flex items-center justify-between rounded-lg border px-3 py-2 ${riskBg[data.risk as keyof typeof riskBg] ?? riskBg.neutral}`}>
-              <span className="text-xs text-slate-300">{name.replace(/_/g, ' ')}</span>
-              <span className={`font-mono text-xs ${riskColor[data.risk as keyof typeof riskColor] ?? riskColor.neutral}`}>
+        <div className="mt-3 grid grid-cols-1 gap-0 border-2 border-black sm:grid-cols-2">
+          {entries.map(([name, data], i) => (
+            <div
+              key={name}
+              className={`flex items-center justify-between gap-2 border-b border-neutral-300 px-3 py-2 ${i % 2 === 0 ? 'sm:border-r' : ''} ${riskBg[data.risk as keyof typeof riskBg] ?? riskBg.neutral}`}
+            >
+              <span className="text-xs text-black">{name.replace(/_/g, ' ')}</span>
+              <span className={`font-mono text-xs font-bold ${riskColor[data.risk as keyof typeof riskColor] ?? riskColor.neutral}`}>
                 {typeof data.value === 'boolean' ? (data.value ? 'yes' : 'no') : data.value}
               </span>
             </div>

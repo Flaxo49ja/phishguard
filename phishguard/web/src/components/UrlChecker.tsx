@@ -31,22 +31,22 @@ export default function UrlChecker() {
   const selectHistory = (item: AnalysisResult) => { setUrl(item.url); setResult(item); };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       {/* Hero */}
-      <div className="space-y-3 py-6 text-center">
-        <h2 className="bg-gradient-to-r from-red-400 via-orange-400 to-amber-300 bg-clip-text text-3xl font-bold text-transparent md:text-5xl">
+      <div className="space-y-2 pt-4">
+        <h2 className="max-w-3xl text-4xl font-black uppercase leading-[1.05] tracking-tight text-black md:text-6xl">
           Is this URL safe to open?
         </h2>
-        <p className="mx-auto max-w-2xl text-slate-400">
+        <p className="max-w-2xl border-l-4 border-black pl-4 text-neutral-700">
           A real machine-learning model — trained on 107,355 URLs — runs entirely in your browser.
           18 lexical features, zero network calls.
         </p>
       </div>
 
       {/* Input */}
-      <div className="mx-auto max-w-3xl">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-          <label htmlFor="url-input" className="mb-2 block text-sm font-medium text-slate-300">
+      <div className="max-w-3xl">
+        <div className="border-2 border-black p-5">
+          <label htmlFor="url-input" className="mb-2 block font-mono text-xs font-bold uppercase tracking-wider text-neutral-700">
             URL to analyze
           </label>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -57,22 +57,22 @@ export default function UrlChecker() {
               onChange={(e) => { setUrl(e.target.value); setError(''); }}
               onKeyDown={(e) => { if (e.key === 'Enter') analyze(); }}
               placeholder="https://example.com/login"
-              className="w-full rounded-xl border border-white/10 bg-slate-900/80 px-4 py-3 font-mono text-sm text-slate-100 placeholder-slate-500 outline-none transition focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30"
+              className="w-full border-2 border-black bg-white px-4 py-3 font-mono text-sm text-black placeholder-neutral-400 outline-none focus:bg-neutral-100"
             />
             <button
               onClick={() => analyze()}
-              className="shrink-0 rounded-xl bg-gradient-to-r from-red-500 to-orange-500 px-6 py-3 font-semibold text-white shadow-lg shadow-red-500/20 transition active:scale-95 hover:shadow-orange-500/40"
+              className="shrink-0 border-2 border-black bg-black px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-black active:translate-y-[2px]"
             >
               Analyze
             </button>
           </div>
-          {error && <p className="mt-3 text-sm text-red-400" role="alert">{error}</p>}
+          {error && <p className="mt-3 font-mono text-sm text-red-700" role="alert">{error}</p>}
         </div>
       </div>
 
       {/* Results */}
       {result && (
-        <div className="animate-rise mx-auto max-w-3xl space-y-4">
+        <div className="max-w-3xl space-y-6">
           <VerdictCard result={result} />
           <ContributionList result={result} />
           <FeatureGrid result={result} />
