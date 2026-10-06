@@ -2,3 +2,7 @@
 *.zip
 *.mp4
 *.webm
+
+# Coursework submission bundle + email draft (personal info, local only)
+PhishGuard_Final/
+phishguard/SUBMISSION_EMAIL.txt
