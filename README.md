@@ -1,6 +1,7 @@
 # PhishGuard
 
 [![Tests](https://github.com/Flaxo49ja/phishguard/actions/workflows/ci.yml/badge.svg)](https://github.com/Flaxo49ja/phishguard/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 Machine-learning phishing URL detection — **as a website**. Paste a URL, get an
 instant verdict with a feature-by-feature explanation. The trained model runs
@@ -62,4 +63,4 @@ Educational/defensive use: **never block a URL on this verdict alone.**
 
 ## License
 
-No license yet — all rights reserved by default. Ask before reusing the code.
+MIT — see [LICENSE](LICENSE).
